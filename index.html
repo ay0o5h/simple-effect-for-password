@@ -1,0 +1,98 @@
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com./ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <title>Document</title>
+</head>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: blueviolet;
+        }
+        .box {
+            background-color: #1E3148;
+            height: 50px;
+            width: 250px;
+            border-radius: 10px;
+            position: absolute;
+            top: 44%;
+            left: 44%;
+        }
+        #pass {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            border: none;
+            outline: unset;
+             background-color: #1E3148;
+            color:#FF8882;
+        }
+        ::placeholder {
+            color:#FF8882;
+        }
+        #show{
+            color:#FF8882;
+            background-color:bisque;
+            border-radius: 30px;
+            position: absolute;
+            top: 8px;
+            left: 200px;
+            padding: 8px;
+            font-size: 20px;
+        }
+        #hide {
+            color:#FF8882;
+            background-color: bisque;
+            border-radius: 30px;
+            position: absolute;
+            top: 8px;
+            left: 200px;
+            padding: 8px;
+            font-size: 20px;
+            display: none;
+        }
+    </style>
+    <body>
+        <div id="box" class="box">
+           <input type="password" id="pass" placeholder="enter password"/>
+            <i  id="show"class="fa fa-eye"></i>
+            <i id="hide" class="fa fa-eye-slash"></i>
+        </div>
+        <script>
+            var pass=document.getElementById('pass'),
+             show=document.getElementById('show'),
+            hide=document.getElementById('hide'),
+            box=document.getElementById('box');
+            pass.onfocus=function(){
+                'use strict';
+	           pass.placeholder = '';
+            };
+            pass.onblur=function(){
+                'use strict';
+	           pass.placeholder = 'enter password';
+            };
+            show.onclick=function(){
+                'use strict';
+                pass.setAttribute('type','text');
+                show.style.display="none";
+                hide.style.display="block";
+                box.style.backgroundColor="bisque";
+                pass.style.backgroundColor="bisque";
+            };
+            hide.onclick=function(){
+                'use strict';
+                pass.setAttribute('type','password');
+                show.style.display="block";
+                show.style.borderRadius="30px";
+                hide.style.display="none";
+                box.style.backgroundColor="#1E3148";
+                pass.style.backgroundColor="#1E3148";
+            };
+        </script>
+    </body>
+</html>
